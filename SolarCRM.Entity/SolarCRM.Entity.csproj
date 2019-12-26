@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1965C935-0B15-4F71-8FFF-16A0BEADE041}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SolarCRM.Entity</RootNamespace>
+    <AssemblyName>SolarCRM.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Common\Decryption.cs" />
+    <Compile Include="Models\Common\Encryption.cs" />
+    <Compile Include="Models\Common\PagingEntity.cs" />
+    <Compile Include="Models\CompanyModule\ContactNotesEntity.cs" />
+    <Compile Include="Models\CompanyModule\ContactsEntity.cs" />
+    <Compile Include="Models\CompanyModule\CustInfoEntity.cs" />
+    <Compile Include="Models\CompanyModule\CustomersEntity.cs" />
+    <Compile Include="Models\CompanyModule\ReferralEntity.cs" />
+    <Compile Include="Models\EmployeeModule\AspnetUserEntity.cs" />
+    <Compile Include="Models\LoginModule\LoginEntity.cs.cs" />
+    <Compile Include="Models\LoginModule\LogInTrackEntity.cs" />
+    <Compile Include="Models\MastersModule\BillToEntity.cs" />
+    <Compile Include="Models\MastersModule\CompanyLocationsEntity.cs" />
+    <Compile Include="Models\MastersModule\CompanySourceEntity.cs" />
+    <Compile Include="Models\MastersModule\CompanySourceSubEntity.cs" />
+    <Compile Include="Models\MastersModule\CompanyTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\CustomerTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\ElecDistributorEntity.cs" />
+    <Compile Include="Models\MastersModule\ElecRetailerEntity.cs" />
+    <Compile Include="Models\MastersModule\EmployeeEntity.cs" />
+    <Compile Include="Models\MastersModule\EmployeesCommissionEntity.cs" />
+    <Compile Include="Models\MastersModule\ExpensesEntity.cs" />
+    <Compile Include="Models\MastersModule\FinanceWithEntity.cs" />
+    <Compile Include="Models\MastersModule\FinanceWithSubEntity.cs" />
+    <Compile Include="Models\MastersModule\HouseTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\InstallationIssueEntity.cs" />
+    <Compile Include="Models\MastersModule\InsuranceClaimStatusEntity.cs" />
+    <Compile Include="Models\MastersModule\InsuranceCompanyEntity.cs" />
+    <Compile Include="Models\MastersModule\InsuranceTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\InverterSupplierEntity.cs" />
+    <Compile Include="Models\MastersModule\InvoicePaymentStatusEntity.cs" />
+    <Compile Include="Models\MastersModule\InvoiceTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\JobStatusEntity.cs" />
+    <Compile Include="Models\MastersModule\LeadCancelReasonEntity.cs" />
+    <Compile Include="Models\MastersModule\LeadGenEntity.cs" />
+    <Compile Include="Models\MastersModule\MtceCompanyTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\OrderingFromEntity.cs" />
+    <Compile Include="Models\MastersModule\PanelSupplierEntity.cs" />
+    <Compile Include="Models\MastersModule\PostCodeEntity.cs" />
+    <Compile Include="Models\MastersModule\ProductFaultCategoryEntity.cs" />
+    <Compile Include="Models\MastersModule\ProductFaultDetailsEntity.cs" />
+    <Compile Include="Models\MastersModule\ProjectCancelEntity.cs" />
+    <Compile Include="Models\MastersModule\ProjectMtceReasonEntity.cs" />
+    <Compile Include="Models\MastersModule\ProjectMtceReasonSubEntity.cs" />
+    <Compile Include="Models\MastersModule\ProjectOnHoldEntity.cs" />
+    <Compile Include="Models\MastersModule\ProjectTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\PromoOfferEntity.cs" />
+    <Compile Include="Models\MastersModule\PromotionTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\ProspectCategoryEntity.cs" />
+    <Compile Include="Models\MastersModule\PVDStatusEntity.cs" />
+    <Compile Include="Models\MastersModule\RexStatus.cs" />
+    <Compile Include="Models\MastersModule\RoofAngleEntity.cs" />
+    <Compile Include="Models\MastersModule\RoofTypeEntity.cs" />
+    <Compile Include="Models\MastersModule\SalesTeamEntity.cs" />
+    <Compile Include="Models\MastersModule\SpecialPurposeEntity.cs" />
+    <Compile Include="Models\MastersModule\StateEntity.cs" />
+    <Compile Include="Models\MastersModule\StockCategoryEntity.cs" />
+    <Compile Include="Models\MastersModule\TaskEntity.cs" />
+    <Compile Include="Models\MastersModule\ZoneEntity.cs" />
+    <Compile Include="Models\ProjectModule\ProjectsEntity.cs" />
+    <Compile Include="Models\ProjectModule\SalesInputEntity.cs" />
+    <Compile Include="Models\StockModule\StockEntity.cs" />
+    <Compile Include="Models\StockModule\StockItemEntity.cs" />
+    <Compile Include="Models\WebDownloadModule\WebDownloadEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

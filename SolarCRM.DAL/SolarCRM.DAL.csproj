@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13A7A89B-2318-43AC-A13D-EE358D5E4CA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SolarCRM.DAL</RootNamespace>
+    <AssemblyName>SolarCRM.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comman\BaseSqlManager.cs" />
+    <Compile Include="Implementations\CompanyModule\CustInfoSQL.cs" />
+    <Compile Include="Implementations\CompanyModule\CustomersSQL.cs" />
+    <Compile Include="Implementations\CompanyModule\ReferralSQL.cs" />
+    <Compile Include="Implementations\LoginModule\LoginSQL.cs" />
+    <Compile Include="Implementations\MastersModule\BillToSQL.cs" />
+    <Compile Include="Implementations\MastersModule\CompanyLocationsSQL.cs" />
+    <Compile Include="Implementations\MastersModule\CompanySourceSQL.cs" />
+    <Compile Include="Implementations\MastersModule\CompanySourceSubSQL.cs" />
+    <Compile Include="Implementations\MastersModule\CompanyTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\CustomerTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ElecDistributorSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ElecRetailerSQL.cs" />
+    <Compile Include="Implementations\MastersModule\EmployeesCommissionSQL.cs" />
+    <Compile Include="Implementations\MastersModule\EmployeeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ExpenseSQL.cs" />
+    <Compile Include="Implementations\MastersModule\FinanceWithSQL.cs" />
+    <Compile Include="Implementations\MastersModule\FinanceWithSubSQL.cs" />
+    <Compile Include="Implementations\MastersModule\HouseTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\InstallationIssueSQL.cs" />
+    <Compile Include="Implementations\MastersModule\InsuranceClaimStatusSQL.cs" />
+    <Compile Include="Implementations\MastersModule\InsuranceCompanySQL.cs" />
+    <Compile Include="Implementations\MastersModule\InsuranceTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\InverterSupplierSQL.cs" />
+    <Compile Include="Implementations\MastersModule\InvoicePaymentStatusSQL.cs" />
+    <Compile Include="Implementations\MastersModule\InvoiceTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\JobStatusSQL.cs" />
+    <Compile Include="Implementations\MastersModule\LeadCancelReasonSQL.cs" />
+    <Compile Include="Implementations\MastersModule\LeadGenSQL.cs" />
+    <Compile Include="Implementations\MastersModule\MtceCompanyTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\OrderingFromSQL.cs" />
+    <Compile Include="Implementations\MastersModule\PanelSupplierSQL.cs" />
+    <Compile Include="Implementations\MastersModule\PostCodeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProductFaultCategorySQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProductFaultDetailsSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectCancelSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectMtceReasonSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectMtceReasonSubSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectOnHoldSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\PromoOfferSQL.cs" />
+    <Compile Include="Implementations\MastersModule\PromotionTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ProspectCategorySQL.cs" />
+    <Compile Include="Implementations\MastersModule\PVDStatusSQL.cs" />
+    <Compile Include="Implementations\MastersModule\RexStatusSQL.cs" />
+    <Compile Include="Implementations\MastersModule\RoofAngleSQL.cs" />
+    <Compile Include="Implementations\MastersModule\RoofTypeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\SalesTeamSQL.cs" />
+    <Compile Include="Implementations\MastersModule\SpecialPurposeSQL.cs" />
+    <Compile Include="Implementations\MastersModule\StockCategorySQL.cs" />
+    <Compile Include="Implementations\MastersModule\TaskSQL.cs" />
+    <Compile Include="Implementations\MastersModule\ZoneSQL.cs" />
+    <Compile Include="Implementations\ProjectModule\ProjectsSQL.cs" />
+    <Compile Include="Implementations\ProjectModule\SalesInputSQL.cs" />
+    <Compile Include="Implementations\StockModule\StockItemSQL.cs" />
+    <Compile Include="Implementations\StockModule\StockSQL.cs" />
+    <Compile Include="Implementations\WebDownload\WebDownloadSQL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementations\EmployeeModule\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SolarCRM.Entity\SolarCRM.Entity.csproj">
+      <Project>{1965c935-0b15-4f71-8fff-16a0beade041}</Project>
+      <Name>SolarCRM.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{216C5EBA-8F01-4A83-8A00-1A761585B97D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SolarCRM.BAL</RootNamespace>
+    <AssemblyName>SolarCRM.BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Flurl, Version=1.0.10.0, Culture=neutral, PublicKeyToken=1308302a96879dfb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Signed.1.0.10\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+MonoTouch10\Flurl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Flurl.Http, Version=0.7.0.0, Culture=neutral, PublicKeyToken=1308302a96879dfb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flurl.Http.Signed.0.7.0\lib\net45\Flurl.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Marvin.JsonPatch, Version=0.7.0.0, Culture=neutral, PublicKeyToken=686c63b2d045ab44, processorArchitecture=MSIL">
+      <HintPath>..\packages\Marvin.JsonPatch.Signed.0.7.0\lib\portable-net40+win+wpa81\Marvin.JsonPatch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="openstacknet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\openstack.net.1.7.7\lib\net45\openstacknet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="pdfcrowd">
+      <HintPath>..\..\..\URE\Source\bin\pdfcrowd.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comman\Search.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comman\SiteConfiguration.cs" />
+    <Compile Include="Implementations\CompanyModule\CustInfoManagement.cs" />
+    <Compile Include="Implementations\CompanyModule\CustomersManagement.cs" />
+    <Compile Include="Implementations\CompanyModule\ReferralManagement.cs" />
+    <Compile Include="Implementations\LoginModule\LoginManagement.cs" />
+    <Compile Include="Implementations\MastersModule\BillToManagement.cs" />
+    <Compile Include="Implementations\MastersModule\CompanyLocationsManagement.cs" />
+    <Compile Include="Implementations\MastersModule\CompanySourceManagement.cs" />
+    <Compile Include="Implementations\MastersModule\CompanySourceSubManagement.cs" />
+    <Compile Include="Implementations\MastersModule\CompanyTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\CustomerTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ElecDistributorManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ElecRetailerManagement.cs" />
+    <Compile Include="Implementations\MastersModule\EmployeeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\EmployeesCommissionManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ExpensesManagement.cs" />
+    <Compile Include="Implementations\MastersModule\FinanceWithManagement.cs" />
+    <Compile Include="Implementations\MastersModule\FinanceWithSubManagement.cs" />
+    <Compile Include="Implementations\MastersModule\HouseTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InstallationIssueManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InsuranceClaimStatusManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InsuranceCompanyManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InsuranceTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InverterSupplierManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InvoicePaymentStatusManagement.cs" />
+    <Compile Include="Implementations\MastersModule\InvoiceTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\JobStatusManagement.cs" />
+    <Compile Include="Implementations\MastersModule\LeadCancelReasonManagement.cs" />
+    <Compile Include="Implementations\MastersModule\LeadGenManagement.cs" />
+    <Compile Include="Implementations\MastersModule\MtceCompanyTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\OrderingFromManagement.cs" />
+    <Compile Include="Implementations\MastersModule\PanelSupplierManagement.cs" />
+    <Compile Include="Implementations\MastersModule\PostCodeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProductFaultCategoryManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProductFaultDetailsManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectCancelManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectMtceReasonManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectMtceReasonSubManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectOnHoldManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProjectTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\PromoOfferManagement.cs" />
+    <Compile Include="Implementations\MastersModule\PromotionTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ProspectCategoryManagement.cs" />
+    <Compile Include="Implementations\MastersModule\PVDStatusManagement.cs" />
+    <Compile Include="Implementations\MastersModule\RexStatusManagement.cs" />
+    <Compile Include="Implementations\MastersModule\RoofAngleManagement.cs" />
+    <Compile Include="Implementations\MastersModule\RoofTypeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\SalesTeamManagement.cs" />
+    <Compile Include="Implementations\MastersModule\SpecialPurposeManagement.cs" />
+    <Compile Include="Implementations\MastersModule\StockCategoryManagement.cs" />
+    <Compile Include="Implementations\MastersModule\TaskManagement.cs" />
+    <Compile Include="Implementations\MastersModule\ZoneManagement.cs" />
+    <Compile Include="Implementations\ProjectModule\ProjectsManagement.cs" />
+    <Compile Include="Implementations\ProjectModule\SalesInputManagement.cs" />
+    <Compile Include="Implementations\StockModule\StockItemManagement.cs" />
+    <Compile Include="Implementations\StockModule\StockManagement.cs" />
+    <Compile Include="Implementations\WebDownload\WebDownloadManagement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implementations\EmployeeModule\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SolarCRM.DAL\SolarCRM.DAL.csproj">
+      <Project>{13a7a89b-2318-43ac-a13d-ee358d5e4ca5}</Project>
+      <Name>SolarCRM.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolarCRM.Entity\SolarCRM.Entity.csproj">
+      <Project>{1965c935-0b15-4f71-8fff-16a0beade041}</Project>
+      <Name>SolarCRM.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

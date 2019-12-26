@@ -1,0 +1,48 @@
+﻿.formmargin {
+    margin-bottom: 0px !important;
+}
+
+.red {
+    color: red;
+}
+
+.getfloat {
+    float: left !important;
+}
+
+
+.modalPopup1 {
+    background-color: #696969;
+    filter: alpha(opacity=40);
+    opacity: 0.3;
+}
+
+.modalpopup1 {
+    background-color: white;
+    padding: 6px 6px 6px 6px;
+}
+
+.autocomplete_completionListElement{
+    margin: 0px !important;
+    background-color: White;
+    color: windowtext;
+    border: buttonshadow;
+    border-width: 1px;
+    border-style: solid;
+    cursor: 'default';
+    overflow: auto;
+    font-family: Calibri;
+    font-size: 12px;
+    text-align: left;
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    max-height: 150px;
+    width: auto;
+}
+
+.autocomplete_completionListElement{ box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15); color: #000000;border-radius: 0 0 4px 4px; border:#cccccc solid 1px; padding:0px 10px;}
+.autocomplete_completionListElement li{ font-family:"Helvetica Neue"; font-size:13px; float:none!important; width:100%!important;}
+.marginbtm10 .autocomplete_completionListElement { visibility:hidden;}
+
+

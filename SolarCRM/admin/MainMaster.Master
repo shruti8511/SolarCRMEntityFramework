@@ -1,0 +1,493 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="SolarCRM.admin.MainMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<%@ Register Src="../admin/includes/headerprofile.ascx" TagName="headerprofile" TagPrefix="header" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Solar CRM</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../bootstrap/css/formmargin.css" />
+
+    <link rel="stylesheet" href="../plugins/fullcalendar/fullcalendar.min.css" />
+    <link rel="stylesheet" href="../plugins/fullcalendar/fullcalendar.print.css" media="print" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css" />
+    <link rel="stylesheet" href="../plugins/timepicker/bootstrap-timepicker.min.css" />
+
+    <link rel="stylesheet" href="../plugins/morris/morris.css" />
+
+    <link rel="stylesheet" href="../plugins/jvectormap/jquery-jvectormap-1.2.2.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../Content/css/AdminLTE.min.css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../Content/css/skins/_all-skins.min.css" />
+    <link rel="stylesheet" href="../plugins/select2/select2.min.css" />
+    <link href="../plugins/datatables/datadableresponsive.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <form id="form1" runat="server" enctype="multipart/form-data">
+        <asp:ToolkitScriptManager runat="server"></asp:ToolkitScriptManager>
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="<%=SiteURL%>/admin/dashboard.aspx" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <%--   <span class="logo-mini"><b>CRM</b></span>--%>
+                    <span class="logo-mini">
+                        <img src="../../content/img/Final.png" style="width: 50px;" /></span>
+
+
+
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>Solar Cells Energy</b></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <div class="col-md-12">
+                        <a href="#" class="sidebar-toggle col-md-1" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle navigation</span>
+                        </a>
+                        <!-- Navbar Right Menu -->
+                        <div class="navbar-custom-menu col-md-11">
+                            <ul class="nav navbar-nav pull-left">
+                                <li class="headermenu" id="lidashboard" runat="server"><a href="<%=SiteURL%>/admin/dashboard.aspx">Dashboard</a></li>
+
+                                <%--  <li class="headermenu"  runat="server"><a href="">Project Dashboard</a></li>--%>
+
+                                <li class="dropdown headermenu" id="liprojects" runat="server">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li id="liProjectdashboard" runat="server"><a href="<%=SiteURL%>/admin/TeamDashboard.aspx"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/project/AddProjects.aspx"><i class="fa fa-plus-circle"></i>Add Projects</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/project/projectlist.aspx"><i class="fa fa-list"></i>Project List</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown headermenu" id="li1" runat="server">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lead<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="<%=SiteURL%>/admin/dashboard2.aspx"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/company/addcompany.aspx"><i class="fa fa-plus-circle"></i>Add Lead</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/company/companylist.aspx"><i class="fa fa-list"></i>Lead List</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/upload/lead.aspx"><i class="fa fa-list"></i>Import Lead</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/company/contacts.aspx"><i class="fa fa-users"></i>Contacts</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/company/leadtracker.aspx"><i class="fa fa-building-o"></i>Lead Tracker</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown headermenu" id="liaccount" runat="server">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="<%=SiteURL%>/admin/masters/expenses.aspx"><i class="fa fa-money"></i>Expense</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/invoice/Quotation.aspx"><i class="fa fa-list"></i>Quotation</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="<%=SiteURL%>/admin/invoice/invoice.aspx"><i class="fa fa-files-o"></i>Invioce</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="headermenu" id="listockitem" runat="server"><a href="<%=SiteURL%>/admin/stock/stockitem.aspx">Stock</a></li>
+
+                                <li class="headermenu" id="lireports" runat="server"><a href="<%=SiteURL%>/admin/reports/Reports.aspx">Report</a></li>
+
+                            </ul>
+
+                            <ul class="nav navbar-nav pull-right">
+
+                                <!-- Notifications: style can be found in dropdown.less -->
+                                <li class="dropdown notifications-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fa fa-bell-o"></i>
+                                        <span class="label label-warning">0</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="header">You have 0 notifications</li>
+                                        <li>
+                                            <!-- inner menu: contains the actual data -->
+                                            <ul class="menu">
+                                                <%--    <li>
+                                                <a href="#">
+                                                    <i class="fa fa-users text-aqua"></i>
+                                                    5 new members joined today
+                                                </a>
+                                            </li>--%>
+                                            </ul>
+                                        </li>
+                                        <li class="footer"><a href="#">View all</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- User Account: style can be found in dropdown.less -->
+                                <header:headerprofile ID="headerprofile" runat="server" />
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="header">Masters</li>
+
+                        <li class="treeview" id="liemployee" runat="server">
+                            <a href="<%=SiteURL%>/admin/masters/employee.aspx">
+                                <i class="fa fa-plus-circle"></i><span>Employee</span>
+                            </a>
+                        </li>
+                        <li class="treeview" id="licompany" runat="server">
+                            <a href="#">
+                                <i class="fa fa-building-o"></i><span>Company</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/companylocations.aspx"><i class="fa fa-plus-circle"></i>Company Location</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/postcodes.aspx"><i class="fa fa-plus-circle"></i>Post Codes</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/zone.aspx"><i class="fa fa-plus-circle"></i>Zone</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/companytype.aspx"><i class="fa fa-plus-circle"></i>Company Type</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/companysource.aspx"><i class="fa fa-plus-circle"></i>Company Source</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/companysourcesub.aspx"><i class="fa fa-plus-circle"></i>Company Source Sub</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/customertype.aspx"><i class="fa fa-plus-circle"></i>Customer Type</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/leadcancelreason.aspx"><i class="fa fa-plus-circle"></i>Lead Cancel Reason</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/leadgen.aspx"><i class="fa fa-plus-circle"></i>Lead Gen</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/task.aspx"><i class="fa fa-plus-circle"></i>Task</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="lielectric" runat="server">
+                            <a href="#">
+                                <i class="fa fa-bolt"></i><span>Electric</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/elecdistributor.aspx"><i class="fa fa-plus-circle"></i>Elec. Distributor</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/elecretailer.aspx"><i class="fa fa-plus-circle"></i>Elec. Retailer</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview" id="liProject" runat="server">
+                            <a href="#">
+                                <i class="fa fa-list"></i><span>Project</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/projecttypes.aspx"><i class="fa fa-plus-circle"></i>Project Types</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/projectcancel.aspx"><i class="fa fa-plus-circle"></i>Project Cancel</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/projectonhold.aspx"><i class="fa fa-plus-circle"></i>Project On-Hold</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/housetype.aspx"><i class="fa fa-plus-circle"></i>House Type</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/roofangles.aspx"><i class="fa fa-plus-circle"></i>Roof Angles</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/rooftype.aspx"><i class="fa fa-plus-circle"></i>Roof Types</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/prospectcategory.aspx"><i class="fa fa-plus-circle"></i>Prospect Category</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/initialinstperiod.aspx"><i class="fa fa-plus-circle"></i>Initail Install Period</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/installationissue.aspx"><i class="fa fa-plus-circle"></i>Installation Issue</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview" id="lifni" runat="server">
+                            <a href="#">
+                                <i class="fa fa-money"></i><span>Finance & Insaurance</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/financewith.aspx"><i class="fa fa-plus-circle"></i>Finace With</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/financewithsub.aspx"><i class="fa fa-plus-circle"></i>Finace With Sub</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/insurancecompany.aspx"><i class="fa fa-plus-circle"></i>Insurance Company</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/insuranceclaimstatus.aspx"><i class="fa fa-plus-circle"></i>Insurance Claim Status</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/insurancetype.aspx"><i class="fa fa-plus-circle"></i>Insurance Type</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview" id="limntc" runat="server">
+                            <a href="#">
+                                <i class="fa fa-wrench"></i><span>Maintenance</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/mtcecompanytype.aspx"><i class="fa fa-plus-circle"></i>Mtce Company Type</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/mtcereason.aspx"><i class="fa fa-plus-circle"></i>Mtce Reason</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/mtcereasonsub.aspx"><i class="fa fa-plus-circle"></i>Mtce Reason Sub</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/productfaultcategory.aspx"><i class="fa fa-plus-circle"></i>Product Fault Category</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/productfaultdetail.aspx"><i class="fa fa-plus-circle"></i>Product Fault Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="liinvoice" runat="server">
+                            <a href="#">
+                                <i class="fa fa-print"></i><span>Invoice</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/invoicetype.aspx"><i class="fa fa-plus-circle"></i>Invoice Type</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/invoicepaymentstatus.aspx"><i class="fa fa-plus-circle"></i>Invoice Payment Status</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="treeview" id="lisupplierandstock" runat="server">
+                            <a href="#">
+                                <i class="fa fa-bars"></i><span>Supplier & Stock</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/invsupplier.aspx"><i class="fa fa-plus-circle"></i>Inverter Supplier</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/panelsupplier.aspx"><i class="fa fa-plus-circle"></i>Panel Supplier</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/stockcategory.aspx"><i class="fa fa-plus-circle"></i>Stock Category</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="liaccess" runat="server">
+                            <a href="#">
+                                <i class="fa fa-wrench"></i><span>Access</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/trackeraccess.aspx"><i class="fa fa-plus-circle"></i>Tracker Access</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/reportaccess.aspx"><i class="fa fa-plus-circle"></i>Report Access</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/stockaccess.aspx"><i class="fa fa-plus-circle"></i>Stock Access</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="liothermaster" runat="server">
+                            <a href="#">
+                                <i class="fa fa-arrow-down"></i><span>Other Masters </span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%=SiteURL%>/admin/masters/billto.aspx"><i class="fa fa-plus-circle"></i>Bill To</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/logintracker.aspx"><i class="fa fa-plus-circle"></i>Login Tracker</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/orderingfrom.aspx"><i class="fa fa-plus-circle"></i>Ordering From</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/promooffer.aspx"><i class="fa fa-plus-circle"></i>Promo Offer</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/promotiontype.aspx"><i class="fa fa-plus-circle"></i>Promotion Type</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/salescommission.aspx"><i class="fa fa-plus-circle"></i>Sales Commission</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/salesteams.aspx"><i class="fa fa-plus-circle"></i>Sales Team</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/specialpurpose.aspx"><i class="fa fa-plus-circle"></i>Special Purpose</a></li>
+                                <li><a href="<%=SiteURL%>/admin/masters/transactiontypes.aspx"><i class="fa fa-plus-circle"></i>Transaction Types</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+
+            <div class="content-wrapper">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <footer class="main-footer">
+
+                <strong>Copyright &copy; 2017-2018 <a href="#">eSolarCRM</a>.</strong> All rights reserved.
+ 
+            </footer>
+        </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
+    <!-- ./wrapper -->
+    <%--  <script src="<%=SiteURL%>/bootstrap/js/jquery-1.12.4.js"></script>--%>
+    <script src="<%=SiteURL%>/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="<%=SiteURL%>/bootstrap/js/bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="<%=SiteURL%>/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <!-- AdminLTE App -->
+    <script src="<%=SiteURL%>/Content/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="<%=SiteURL%>/Content/js/demo.js"></script>
+    <script src="<%=SiteURL%>/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<%=SiteURL%>/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="<%=SiteURL%>/plugins/select2/select2.full.min.js"></script>
+    <!-- Select2 -->
+    <!-- InputMask -->
+    <script src="<%=SiteURL%>/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="<%=SiteURL%>/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="<%=SiteURL%>/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <!-- date-range-picker -->
+    <script src="<%=SiteURL%>/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="<%=SiteURL%>/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="<%=SiteURL%>/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <!-- bootstrap time picker -->
+    <script src="<%=SiteURL%>/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="<%=SiteURL%>/plugins/timepicker/bootstrap-timepicker.js"></script>
+    <!-- iCheck 1.0.1 -->
+
+    <script src="<%=SiteURL%>/plugins/iCheck/icheck.min.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="<%=SiteURL%>/plugins/fastclick/fastclick.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="<%=SiteURL%>/plugins/fullcalendar/fullcalendar.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="<%=SiteURL%>/plugins/morris/morris.min.js"></script>
+
+    <%--  <script src="../Content/js/pages/dashboard2.js"></script>--%>
+
+
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $(".select2").select2();
+            $('.datepicker').datepicker({
+                autoclose: true,
+            });
+
+            $(".timepicker").timepicker({
+                showInputs: false
+            });
+
+            $("[data-mask]").inputmask();
+
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+            $('#example3').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+            $('#example4').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+            $('#example5').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+            $('#example6').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+            $('#example7').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+            $('#example8').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+
+            $('#example9').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false
+            });
+
+
+        });
+    </script>
+
+    <script>
+        document.onkeypress = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+        document.onmousedown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+        document.onkeydown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                return false;
+            }
+        }
+    </script>
+
+
+
+    <script>
+        $(function () {
+
+            var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+            $("#navbar-collapse ul li a").each(function () {
+                if ($(this).attr("href") == pgurl || $(this).attr("href") == '')
+                    if ($(this).parent().hasClass('headermenu')) {
+                        $(this).parent().addClass("active");
+                    }
+                    else {
+                        $(this).parent().parent().parent().addClass("active");
+                    }
+            })
+        });
+    </script>
+
+</body>
+</html>
+
